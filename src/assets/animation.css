@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Vue transition using Transition and TransitionGroup component */
+.left-to-right-enter-active {transition: transform 0.5s ease, opacity 0.5s ease;}
+.left-to-right-enter-from {transform: translateX(-50%); opacity: 0;}
+.left-to-right-enter-to {transform: translateX(0); opacity: 1;}
+
+.right-to-left-enter-active {transition: transform 0.5s ease, opacity 0.5s ease;}
+.right-to-left-enter-from {transform: translateX(50%); opacity: 0;}
+.right-to-left-enter-to {transform: translateX(0); opacity: 1;}
+
+.down-to-up-enter-active {transition: transform 0.5s ease, opacity 0.5s ease;}
+.down-to-up-enter-from {transform: translateY(50%); opacity: 0;}
+.down-to-up-enter-to {transform: translateX(0); opacity: 1;}
+
+.slide-fade-enter-active {transition: all 0.3s ease-out;}
+.slide-fade-leave-active {transition: all 0.4s;}
+.slide-fade-enter-from, .slide-fade-leave-to {transform: translateY(-20px); opacity: 0;}
+
+/* CSS native transition */
+.slide-up {animation: slide-up 1s}
+@keyframes slide-up {
+  0% {transform: translateY(30px); opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.slide-down {animation: slide-down 1s;}
+@keyframes slide-down {
+  0% {transform: translateY(-20px); opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.slide-to-right {animation: slide-to-right 1s;}
+@keyframes slide-to-right {
+  0% {transform: translateX(-20px); opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.slide-to-left {animation: slide-to-left 1s;}
+@keyframes slide-to-left {
+  0% {transform: translateX(20px); opacity: 0;}
+  100% {opacity: 1;}
+}
