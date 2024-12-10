@@ -50,16 +50,18 @@ async function scrollToBottom() {
 }
 
 async function downloadCV() {
-    const res = await fetch('src/assets/Rolando Villanueva CV Resume.pdf');
-    const blob = await res.blob();
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = 'Rolando Villanueva CV Resume.pdf';
-    document.body.appendChild(a);
-    a.click();
-    await new Promise((resolve) => setTimeout(resolve, 200));
-    window.URL.revokeObjectURL(url);
-    a.remove();
+    // const res = await fetch('public/Rolando Villanueva CV Resume.pdf');
+    // const blob = await res.blob();
+    // const url = window.URL.createObjectURL(blob);
+    // const a = document.createElement("a");
+    // a.href = url;
+    // a.download = 'Rolando Villanueva CV Resume.pdf';
+    // document.body.appendChild(a);
+    // a.click();
+    // await new Promise((resolve) => setTimeout(resolve, 200));
+    // window.URL.revokeObjectURL(url);
+    // a.remove();
+
+    window.open('https://drive.google.com/file/d/1Ntcjna3FRctB2jllu1OO7mjq5ebSmJuq/view?usp=sharing', '_blank')
 }
 </script>
