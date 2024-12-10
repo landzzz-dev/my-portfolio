@@ -188,10 +188,11 @@ function observeSections() {
 }
 
 async function scrollToTop() {
-    // page.value = 'home'
-    // isObserverActive.value = false;
-    // await new Promise((resolve) => setTimeout(resolve, 450))
-    // isObserverActive.value = true;
+    page.value = 'home'
+    router.push('/')
+    isObserverActive.value = false;
+    await new Promise((resolve) => setTimeout(resolve, 450))
+    isObserverActive.value = true;
     location.reload();
 };
 
