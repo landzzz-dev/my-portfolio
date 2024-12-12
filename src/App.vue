@@ -107,7 +107,7 @@ const activeSection = ref('');
 
 const navLeft2 = ref(false);
 onMounted(async () => {
-    router.push('/home')
+    router.push('/')
     window.scrollTo({top: 0});
     history.scrollRestoration = "manual";
     observeSections();
