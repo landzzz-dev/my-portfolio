@@ -107,9 +107,7 @@ const activeSection = ref('');
 
 const navLeft2 = ref(false);
 onMounted(async () => {
-    router.push('/')
-    await new Promise((resolve) => setTimeout(resolve, 100));
-    router.push('home')
+    router.push('/home')
     window.scrollTo({top: 0});
     history.scrollRestoration = "manual";
     observeSections();
@@ -201,7 +199,6 @@ function observeSections() {
 }
 
 async function scrollToTop() {
-    // page.value = 'home'
     router.push('/')
     isObserverActive.value = false;
     await new Promise((resolve) => setTimeout(resolve, 450))
