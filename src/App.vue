@@ -175,10 +175,22 @@ function observeSections() {
                     if (entry.isIntersecting) {
                         activeSection.value = entry.target.id;
                         await new Promise((resolve) => setTimeout(resolve, 200))
-                        if(entry.target.id == 'about') about.value = true;
-                        if(entry.target.id == 'experience') experience.value = true;
-                        if(entry.target.id == 'project') project.value = true;
-                        if(entry.target.id == 'contact') contact.value = true;
+                        if(entry.target.id == 'about') {
+                            about.value = true; 
+                            router.push('/about')
+                        }
+                        if(entry.target.id == 'experience') {
+                            experience.value = true;
+                            router.push('/experience')
+                        }
+                        // if(entry.target.id == 'project') {
+                        //     project.value = true;
+                        //     router.push('/project')
+                        // }
+                        if(entry.target.id == 'contact') {
+                            contact.value = true;
+                            router.push('/contact')
+                        }
                     }
                 }
             });
@@ -190,10 +202,10 @@ function observeSections() {
 
 async function scrollToTop() {
     // page.value = 'home'
-    // router.push('home')
-    // isObserverActive.value = false;
-    // await new Promise((resolve) => setTimeout(resolve, 450))
-    // isObserverActive.value = true;
+    router.push('/')
+    isObserverActive.value = false;
+    await new Promise((resolve) => setTimeout(resolve, 450))
+    isObserverActive.value = true;
     location.reload();
 };
 
