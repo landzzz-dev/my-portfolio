@@ -106,7 +106,7 @@
                                         <Nodejs />
                                     </div>
                                     <div class="w-full content-center">
-                                        <div class="w-full flex justify-between">
+                                        <div class="flex justify-between text-slate-300">
                                             <p>Express.js</p>
                                             <p>90%</p>
                                         </div>

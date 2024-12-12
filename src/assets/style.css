@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body, html {
-  @apply scroll-smooth dark:bg-slate-900 dark:text-white;
+  @apply bg-slate-900 text-white;
 }
 
 ::-webkit-scrollbar {

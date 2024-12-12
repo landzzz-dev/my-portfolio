@@ -28,7 +28,7 @@ const router = createRouter({
       name: 'Contact',
       component: () => import('@/views/ContactView.vue')
     },
-  ]
+  ],
 })
 
 export default router;

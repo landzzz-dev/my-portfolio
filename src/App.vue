@@ -107,7 +107,9 @@ const activeSection = ref('');
 
 const navLeft2 = ref(false);
 onMounted(async () => {
-    router.push('/home')
+    router.push('/')
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    router.push('home')
     window.scrollTo({top: 0});
     history.scrollRestoration = "manual";
     observeSections();
@@ -132,7 +134,7 @@ onUnmounted(() => {
 watchEffect(async () => {
     if(page.value) {
         const element = document.getElementById(page.value);
-        element.scrollIntoView({block: 'center'});
+        element.scrollIntoView({block: 'center', behavior: 'smooth'});
     }
     if(page.value == 'home') {
         window.scrollTo({top: 0})
@@ -146,10 +148,10 @@ async function scrollToPage(id) {
     activeSection.value = id;
 
     if(id == 'home') {
-        window.scrollTo({top: 0});
+        window.scrollTo({top: 0, behavior: 'smooth'});
     } else {
         const element = document.getElementById(id);
-        element.scrollIntoView({block: 'center'});
+        element.scrollIntoView({block: 'center', behavior: 'smooth'});
         // const y = element.getBoundingClientRect().top + window.scrollY;
         // window.scrollTo({top: y});
     }
@@ -172,7 +174,6 @@ function observeSections() {
                 if(isObserverActive.value) {
                     if (entry.isIntersecting) {
                         activeSection.value = entry.target.id;
-                        router.push(`/${entry.target.id}`);
                         await new Promise((resolve) => setTimeout(resolve, 200))
                         if(entry.target.id == 'about') about.value = true;
                         if(entry.target.id == 'experience') experience.value = true;
@@ -188,11 +189,11 @@ function observeSections() {
 }
 
 async function scrollToTop() {
-    page.value = 'home'
-    router.push('/')
-    isObserverActive.value = false;
-    await new Promise((resolve) => setTimeout(resolve, 450))
-    isObserverActive.value = true;
+    // page.value = 'home'
+    // router.push('home')
+    // isObserverActive.value = false;
+    // await new Promise((resolve) => setTimeout(resolve, 450))
+    // isObserverActive.value = true;
     location.reload();
 };
 
