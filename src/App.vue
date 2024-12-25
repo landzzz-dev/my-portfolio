@@ -45,11 +45,11 @@
         </div>
     </Transition>
 
-    <section class="section" id="#home"><div><Home /></div></section>
-    <section class="section" id="#about"><div v-if="about" class="slide-up"><About /></div></section>
-    <section class="section" id="#experience"><div v-if="experience" class="slide-up"><Experience /></div></section>
-    <!-- <section class="section" id="#project"><div v-if="project" class="slide-up"><Project /></div></section> -->
-    <section class="section" id="#contact"><div v-if="contact" class="slide-up"><Contact /></div></section>
+    <section id="#home"><div class="slide-up"><Home /></div></section>
+    <section id="#about"><div v-if="about" class="slide-up"><About /></div></section>
+    <section id="#experience"><div v-if="experience" class="slide-up"><Experience /></div></section>
+    <!-- <section id="#project"><div v-if="project" class="slide-up"><Project /></div></section> -->
+    <section id="#contact"><div v-if="contact" class="slide-up"><Contact /></div></section>
     <div class="w-full h-64 text-slate-400 content-center text-center bg-slate-800 grid gap-5">
         <p @click="scrollToTop()" class="text-2xl font-bold hover:cursor-pointer">
             <span class="hover:text-white duration-500">Rolando Villanueva</span>
@@ -68,17 +68,16 @@
 <script setup>
 import { storeToRefs } from 'pinia';
 import { useMainStore } from './store/mainStore';
-import { defineAsyncComponent, hydrateOnVisible, onMounted, onUnmounted, ref, watchEffect } from 'vue';
+import { defineAsyncComponent, onMounted, onUnmounted, ref, watchEffect } from 'vue';
 
-const Home = defineAsyncComponent({ loader: () => import('@/views/HomeView.vue'), hydrate: hydrateOnVisible(), });
-const About = defineAsyncComponent({ loader: () => import('@/views/AboutView.vue'), hydrate: hydrateOnVisible(), }); 
-const Experience = defineAsyncComponent({ loader: () => import('@/views/ExperienceView.vue'), hydrate: hydrateOnVisible(), }); 
-// const Project = defineAsyncComponent({ loader: () => import('@/views/ProjectView.vue'), hydrate: hydrateOnVisible(), }); 
-const Contact = defineAsyncComponent({ loader: () => import('@/views/ContactView.vue'), hydrate: hydrateOnVisible(), }); 
+const Home = defineAsyncComponent({ loader: () => import('@/views/HomeView.vue')});
+const About = defineAsyncComponent({ loader: () => import('@/views/AboutView.vue')}); 
+const Experience = defineAsyncComponent({ loader: () => import('@/views/ExperienceView.vue')}); 
+// import Project = defineAsyncComponent({ loader: () => import('@/views/ProjectView.vue')}); 
+const Contact = defineAsyncComponent({ loader: () => import('@/views/ContactView.vue')}); 
 
 const store = useMainStore();
 const { page, isObserverActive } = storeToRefs(store);
-// const router = useRouter();
 
 const navDrawer = ref(false);
 
@@ -173,8 +172,7 @@ function observeSections() {
                         if(entry.target.id == '#experience') experience.value = true;
                         // if(entry.target.id == '#project') project.value = true;
                         if(entry.target.id == '#contact') contact.value = true;
-                        
-                        // Trigger navigation
+
                         const link = document.createElement('a');
                         link.href = entry.target.id;
                         link.click();
