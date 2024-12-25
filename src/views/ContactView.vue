@@ -9,7 +9,7 @@
                 </TransitionGroup>
                 <CTextarea v-if="contact.message" style="transition-delay: 600ms;" label="Message *" v-model="contacts.message"></CTextarea>
                 <div v-if="contact.button" style="transition-delay: 800ms;" class="pt-10 w-full justify-items-center">
-                    <CButton @click="sendEmail()" :loading="loading" color="green" class="sm:w-full lg:w-1/4">
+                    <CButton @click="sendEmail()" :loading="loading" color="green" class="xs:w-full sm:w-full lg:w-1/4">
                         <CIcon icon="email" />Send
                     </CButton>
                 </div>

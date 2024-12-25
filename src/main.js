@@ -2,7 +2,7 @@ import './assets/style.css';
 import './assets/animation.css';
 import { createApp, defineAsyncComponent } from 'vue';
 import App from './App.vue';
-import router from './router/index.js';
+// import router from './router/index.js';
 import { createPinia } from 'pinia';
 const pinia = createPinia();
 
@@ -16,6 +16,6 @@ app.component('CButton', CButton);
 app.component('CIcon', CIcon);
 app.component('CInput', CInput);
 app.component('CTextarea', CTextarea);
-app.use(router);
+// app.use(router);
 app.use(pinia);
 app.mount('#app');

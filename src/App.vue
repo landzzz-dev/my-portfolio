@@ -9,16 +9,16 @@
             </div>
             <div class="slide-to-left flex">
                 <TransitionGroup name="right-to-left" tag="ul" class="flex">
-                    <RouterLink
+                    <a
                         v-for="(link, i) in links" :key="i"
-                        :to="`/${link.id}`"
+                        :href="`${link.id}`"
                         :class="{ 'text-green-500': activeSection == link.id }"
                         class="p-3 duration-500 hover:text-green-500 xs:hidden md:block"
                         :style="{ transitionDelay: `${i * 200}ms` }"
                         @click="scrollToPage(link.id)"
                     >
                         {{ link.name }}
-                    </RouterLink>
+                    </a>
                 </TransitionGroup>
                 <div class="xs:block md:hidden w-full">
                     <CIcon @click="navDrawer = !navDrawer" :icon="navDrawer ? 'close' : 'menu'" />
@@ -31,25 +31,25 @@
         <div @click="navDrawer = !navDrawer" v-if="navDrawer" class="xs:block md:hidden z-10 w-full backdrop-blur-md fixed">
             <div class="h-full dark:bg-transparent border-b border-slate-800 border-opacity-20">
                 <div class="relative flex flex-col">
-                    <RouterLink
+                    <a
                         v-for="(link, i) in links" :key="i"
-                        :to="`/${link.id}`"
+                        :href="`${link.id}`"
                         :class="{ 'text-green-500': activeSection == link.id }"
                         class="p-3 px-6 duration-500 hover:text-green-500 flex"
                         @click="scrollToPage(link.id)"
                     >
                         {{ link.name }}
-                    </RouterLink>
+                    </a>
                 </div>
             </div>
         </div>
     </Transition>
 
-    <section class="section" id="home"><div><Home /></div></section>
-    <section class="section" id="about"><div v-if="about" class="slide-up"><About /></div></section>
-    <section class="section" id="experience"><div v-if="experience" class="slide-up"><Experience /></div></section>
-    <!-- <section class="section" id="project"><div v-if="project" class="slide-up"><Project /></div></section> -->
-    <section class="section" id="contact"><div v-if="contact" class="slide-up"><Contact /></div></section>
+    <section class="section" id="#home"><div><Home /></div></section>
+    <section class="section" id="#about"><div v-if="about" class="slide-up"><About /></div></section>
+    <section class="section" id="#experience"><div v-if="experience" class="slide-up"><Experience /></div></section>
+    <!-- <section class="section" id="#project"><div v-if="project" class="slide-up"><Project /></div></section> -->
+    <section class="section" id="#contact"><div v-if="contact" class="slide-up"><Contact /></div></section>
     <div class="w-full h-64 text-slate-400 content-center text-center bg-slate-800 grid gap-5">
         <p @click="scrollToTop()" class="text-2xl font-bold hover:cursor-pointer">
             <span class="hover:text-white duration-500">Rolando Villanueva</span>
@@ -68,7 +68,6 @@
 <script setup>
 import { storeToRefs } from 'pinia';
 import { useMainStore } from './store/mainStore';
-import { RouterLink, useRouter } from 'vue-router'
 import { defineAsyncComponent, hydrateOnVisible, onMounted, onUnmounted, ref, watchEffect } from 'vue';
 
 const Home = defineAsyncComponent({ loader: () => import('@/views/HomeView.vue'), hydrate: hydrateOnVisible(), });
@@ -79,7 +78,7 @@ const Contact = defineAsyncComponent({ loader: () => import('@/views/ContactView
 
 const store = useMainStore();
 const { page, isObserverActive } = storeToRefs(store);
-const router = useRouter();
+// const router = useRouter();
 
 const navDrawer = ref(false);
 
@@ -90,11 +89,11 @@ const landzDev = ref({
 
 const links = ref([]);
 const fullLinks = ref([
-    {id: 'home', name: 'Home'},
-    {id: 'about', name: 'About'},
-    {id: 'experience', name: 'Experience'},
-    // {id: 'project', name: 'Project'},
-    {id: 'contact', name: 'Contact'},
+    {id: '#home', name: 'Home'},
+    {id: '#about', name: 'About'},
+    {id: '#experience', name: 'Experience'},
+    // {id: '#project', name: 'Project'},
+    {id: '#contact', name: 'Contact'},
 ]);
 
 const home = ref(false);
@@ -107,9 +106,8 @@ const activeSection = ref('');
 
 const navLeft2 = ref(false);
 onMounted(async () => {
-    router.push('/')
     window.scrollTo({top: 0});
-    history.scrollRestoration = "manual";
+    history.scrollRestoration = 'manual';
     observeSections();
     home.value = true;
 
@@ -134,9 +132,6 @@ watchEffect(async () => {
         const element = document.getElementById(page.value);
         element.scrollIntoView({block: 'center', behavior: 'smooth'});
     }
-    if(page.value == 'home') {
-        window.scrollTo({top: 0})
-    }
     await new Promise((resolve) => setTimeout(resolve, 200));
     page.value = '';
 });
@@ -145,7 +140,7 @@ async function scrollToPage(id) {
     isObserverActive.value = false;
     activeSection.value = id;
 
-    if(id == 'home') {
+    if(id == '#home') {
         window.scrollTo({top: 0, behavior: 'smooth'});
     } else {
         const element = document.getElementById(id);
@@ -158,10 +153,10 @@ async function scrollToPage(id) {
     isObserverActive.value = true;
     
     await new Promise((resolve) => setTimeout(resolve, 200))
-    if(id == 'about') about.value = true;
-    if(id == 'experience') experience.value = true;
-    if(id == 'project') project.value = true;
-    if(id == 'contact') contact.value = true;
+    if(id == '#about') about.value = true;
+    if(id == '#experience') experience.value = true;
+    if(id == '#project') project.value = true;
+    if(id == '#contact') contact.value = true;
 }
 
 function observeSections() {
@@ -173,22 +168,16 @@ function observeSections() {
                     if (entry.isIntersecting) {
                         activeSection.value = entry.target.id;
                         await new Promise((resolve) => setTimeout(resolve, 200))
-                        if(entry.target.id == 'about') {
-                            about.value = true; 
-                            router.push('/about')
-                        }
-                        if(entry.target.id == 'experience') {
-                            experience.value = true;
-                            router.push('/experience')
-                        }
-                        // if(entry.target.id == 'project') {
-                        //     project.value = true;
-                        //     router.push('/project')
-                        // }
-                        if(entry.target.id == 'contact') {
-                            contact.value = true;
-                            router.push('/contact')
-                        }
+
+                        if(entry.target.id == '#about') about.value = true;
+                        if(entry.target.id == '#experience') experience.value = true;
+                        // if(entry.target.id == '#project') project.value = true;
+                        if(entry.target.id == '#contact') contact.value = true;
+                        
+                        // Trigger navigation
+                        const link = document.createElement('a');
+                        link.href = entry.target.id;
+                        link.click();
                     }
                 }
             });
@@ -199,7 +188,6 @@ function observeSections() {
 }
 
 async function scrollToTop() {
-    router.push('/')
     isObserverActive.value = false;
     await new Promise((resolve) => setTimeout(resolve, 450))
     isObserverActive.value = true;

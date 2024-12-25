@@ -15,7 +15,7 @@
                                     <div class="w-full content-center">
                                         <div class="flex justify-between text-slate-300">
                                             <p>Vue.js</p>
-                                            <p>91%</p>
+                                            <!-- <p>91%</p> -->
                                         </div>
                                         <div class="w-full rounded-full bg-gray-700">
                                             <div class="bg-green-500 xs:h-3 sm:h-4 rounded-full" style="width: 91%"></div>
@@ -29,7 +29,7 @@
                                     <div class="w-full content-center">
                                         <div class="flex justify-between text-slate-300">
                                             <p>Vuetify</p>
-                                            <p>90%</p>
+                                            <!-- <p>90%</p> -->
                                         </div>
                                         <div class="w-full rounded-full bg-gray-700">
                                             <div class="bg-green-500 xs:h-3 sm:h-4 rounded-full" style="width: 90%"></div>
@@ -43,7 +43,7 @@
                                     <div class="w-full content-center text-slate-300">
                                         <div class="flex justify-between">
                                             <p>Sass</p>
-                                            <p>84%</p>
+                                            <!-- <p>84%</p> -->
                                         </div>
                                         <div class="w-full rounded-full bg-gray-700">
                                             <div class="bg-green-500 xs:h-3 sm:h-4 rounded-full" style="width: 84%"></div>
@@ -57,7 +57,7 @@
                                     <div class="w-full content-center text-slate-300">
                                         <div class="flex justify-between">
                                             <p>Tailwind</p>
-                                            <p>82%</p>
+                                            <!-- <p>82%</p> -->
                                         </div>
                                         <div class="w-full rounded-full bg-gray-700">
                                             <div class="bg-green-500 xs:h-3 sm:h-4 rounded-full" style="width: 82%"></div>
@@ -71,7 +71,7 @@
                                     <div class="w-full content-center">
                                         <div class="flex justify-between text-slate-300">
                                             <p>Typescript</p>
-                                            <p>80%</p>
+                                            <!-- <p>80%</p> -->
                                         </div>
                                         <div class="w-full rounded-full bg-gray-700">
                                             <div class="bg-green-500 xs:h-3 sm:h-4 rounded-full" style="width: 80%"></div>
@@ -94,7 +94,7 @@
                                     <div class="w-full content-center">
                                         <div class="flex justify-between text-slate-300">
                                             <p>Laravel</p>
-                                            <p>91%</p>
+                                            <!-- <p>91%</p> -->
                                         </div>
                                         <div class="w-full rounded-full bg-gray-700">
                                             <div class="bg-green-500 xs:h-3 sm:h-4 rounded-full" style="width: 91%"></div>
@@ -108,7 +108,7 @@
                                     <div class="w-full content-center">
                                         <div class="flex justify-between text-slate-300">
                                             <p>Express.js</p>
-                                            <p>90%</p>
+                                            <!-- <p>90%</p> -->
                                         </div>
                                         <div class="w-full rounded-full bg-gray-700">
                                             <div class="bg-green-500 xs:h-3 sm:h-4 rounded-full" style="width: 90%"></div>
@@ -122,7 +122,7 @@
                                     <div class="w-full content-center">
                                         <div class="flex justify-between text-slate-300">
                                             <p>Express.ts</p>
-                                            <p>80%</p>
+                                            <!-- <p>80%</p> -->
                                         </div>
                                         <div class="w-full rounded-full bg-gray-700">
                                             <div class="bg-green-500 xs:h-3 sm:h-4 rounded-full" style="width: 80%"></div>

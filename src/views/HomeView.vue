@@ -43,7 +43,7 @@ onMounted(async () => {
 })
 
 async function scrollToBottom() {
-    page.value = 'contact'
+    page.value = '#contact'
     isObserverActive.value = false;
     await new Promise((resolve) => setTimeout(resolve, 450))
     isObserverActive.value = true;

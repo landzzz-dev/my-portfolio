@@ -22,8 +22,6 @@ const buttonClass = computed(() => {
     let customClass = [];
 
     if(props.block) {
-        console.log(props.block);
-        
         customClass.push('w-full')
     }
     if(props.loading) {
