@@ -33,7 +33,7 @@ const buttonClass = computed(() => {
     } else if(props.color == 'blue') {
         customClass.push('bg-blue-500 text-slate-900 hover:bg-blue-600 duration-500');
     } else {
-        customClass.push('border-2 border-green-500 dark:text-green-500 hover:text-slate-900 hover:bg-green-500 duration-500');
+        customClass.push('border-2 border-green-500 text-green-500 hover:text-slate-900 hover:bg-green-500 duration-500');
     }
 
     return customClass;

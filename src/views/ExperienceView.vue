@@ -46,7 +46,7 @@
                                             <!-- <p>84%</p> -->
                                         </div>
                                         <div class="w-full rounded-full bg-gray-700">
-                                            <div class="bg-green-500 xs:h-3 sm:h-4 rounded-full" style="width: 84%"></div>
+                                            <div class="bg-green-500 xs:h-3 sm:h-4 rounded-full" style="width: 80%"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@
                                             <!-- <p>82%</p> -->
                                         </div>
                                         <div class="w-full rounded-full bg-gray-700">
-                                            <div class="bg-green-500 xs:h-3 sm:h-4 rounded-full" style="width: 82%"></div>
+                                            <div class="bg-green-500 xs:h-3 sm:h-4 rounded-full" style="width: 70%"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -74,7 +74,7 @@
                                             <!-- <p>80%</p> -->
                                         </div>
                                         <div class="w-full rounded-full bg-gray-700">
-                                            <div class="bg-green-500 xs:h-3 sm:h-4 rounded-full" style="width: 80%"></div>
+                                            <div class="bg-green-500 xs:h-3 sm:h-4 rounded-full" style="width: 60%"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -125,7 +125,7 @@
                                             <!-- <p>80%</p> -->
                                         </div>
                                         <div class="w-full rounded-full bg-gray-700">
-                                            <div class="bg-green-500 xs:h-3 sm:h-4 rounded-full" style="width: 80%"></div>
+                                            <div class="bg-green-500 xs:h-3 sm:h-4 rounded-full" style="width: 60%"></div>
                                         </div>
                                     </div>
                                 </div>

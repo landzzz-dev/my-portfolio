@@ -1,6 +1,6 @@
 <template>
-    <header class="sticky top-0 z-10 backdrop-blur-md dark:bg-transparent border-b border-slate-800 border-opacity-20">
-        <nav class="h-16 container mx-auto sm:px-5 flex justify-between items-center dark:text-white">
+    <header class="sticky top-0 z-10 backdrop-blur-md bg-transparent border-b border-slate-800 border-opacity-20">
+        <nav class="h-16 container mx-auto sm:px-5 flex justify-between items-center text-white">
             <div class="font-bold text-3xl">
                 <TransitionGroup name="left-to-right" tag="ul" class="flex">
                     <span v-if="landzDev.landz" class="landz" style="transition-delay: 400ms;">Landz</span>
@@ -29,7 +29,7 @@
 
     <Transition name="slide-fade">
         <div @click="navDrawer = !navDrawer" v-if="navDrawer" class="xs:block md:hidden z-10 w-full backdrop-blur-md fixed">
-            <div class="h-full dark:bg-transparent border-b border-slate-800 border-opacity-20">
+            <div class="h-full bg-transparent border-b border-slate-800 border-opacity-20">
                 <div class="relative flex flex-col">
                     <a
                         v-for="(link, i) in links" :key="i"
@@ -68,13 +68,13 @@
 <script setup>
 import { storeToRefs } from 'pinia';
 import { useMainStore } from './store/mainStore';
-import { defineAsyncComponent, onMounted, onUnmounted, ref, watchEffect } from 'vue';
+import { onMounted, onUnmounted, ref, watchEffect } from 'vue';
 
-const Home = defineAsyncComponent({ loader: () => import('@/views/HomeView.vue')});
-const About = defineAsyncComponent({ loader: () => import('@/views/AboutView.vue')}); 
-const Experience = defineAsyncComponent({ loader: () => import('@/views/ExperienceView.vue')}); 
-// import Project = defineAsyncComponent({ loader: () => import('@/views/ProjectView.vue')}); 
-const Contact = defineAsyncComponent({ loader: () => import('@/views/ContactView.vue')}); 
+import Home from '@/views/HomeView.vue';
+import About from '@/views/AboutView.vue'; 
+import Experience from '@/views/ExperienceView.vue'; 
+// import Project from '@/views/ProjectView.vue'; 
+import Contact from '@/views/ContactView.vue'; 
 
 const store = useMainStore();
 const { page, isObserverActive } = storeToRefs(store);
@@ -210,7 +210,7 @@ function openNewTab(link) {
     @apply text-green-500; 
 }
 section { 
-    @apply h-svh content-center min-h-fit dark:text-white dark:bg-slate-900; 
+    @apply h-svh content-center min-h-fit text-white bg-slate-900; 
 }
 @media only screen and (max-width: 375px) { 
     section {zoom: 0.8 !important;} 

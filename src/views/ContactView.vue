@@ -19,11 +19,8 @@
 </template>
 
 <script setup>
-import { useMainStore } from '@/store/mainStore';
 import { onMounted, reactive, ref } from 'vue';
 import emailjs from 'emailjs-com';
-
-const store = useMainStore();
 
 const contact = ref({
     name: false,
