@@ -45,7 +45,7 @@
         </div>
     </Transition>
 
-    <section id="#home"><div class="slide-up"><Home /></div></section>
+    <section id="#home"><div class="slide-up"><Home @scrollToContact="scrollToPage" /></div></section>
     <section id="#about"><div v-if="about" class="slide-up"><About /></div></section>
     <section id="#experience"><div v-if="experience" class="slide-up"><Experience /></div></section>
     <!-- <section id="#project"><div v-if="project" class="slide-up"><Project /></div></section> -->
@@ -66,18 +66,13 @@
 </template>
 
 <script setup>
-import { storeToRefs } from 'pinia';
-import { useMainStore } from './store/mainStore';
-import { onMounted, onUnmounted, ref, watchEffect } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 
 import Home from '@/views/HomeView.vue';
 import About from '@/views/AboutView.vue'; 
 import Experience from '@/views/ExperienceView.vue'; 
 // import Project from '@/views/ProjectView.vue'; 
 import Contact from '@/views/ContactView.vue'; 
-
-const store = useMainStore();
-const { page, isObserverActive } = storeToRefs(store);
 
 const navDrawer = ref(false);
 
@@ -126,15 +121,7 @@ onUnmounted(() => {
     }
 });
 
-watchEffect(async () => {
-    if(page.value) {
-        const element = document.getElementById(page.value);
-        element.scrollIntoView({block: 'center', behavior: 'smooth'});
-    }
-    await new Promise((resolve) => setTimeout(resolve, 200));
-    page.value = '';
-});
-
+const isObserverActive = ref(true);
 async function scrollToPage(id) {
     isObserverActive.value = false;
     activeSection.value = id;
@@ -206,9 +193,6 @@ function openNewTab(link) {
 </script>
 
 <style scoped>
-.router-link-active { 
-    @apply text-green-500; 
-}
 section { 
     @apply h-svh content-center min-h-fit text-white bg-slate-900; 
 }

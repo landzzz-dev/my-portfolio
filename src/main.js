@@ -2,8 +2,6 @@ import './assets/style.css';
 import './assets/animation.css';
 import { createApp } from 'vue';
 import App from './App.vue';
-import { createPinia } from 'pinia';
-const pinia = createPinia();
 
 import CButton from '@/components/CButton.vue';
 import CIcon from '@/components/CIcon.vue';
@@ -15,5 +13,4 @@ app.component('CButton', CButton);
 app.component('CIcon', CIcon);
 app.component('CInput', CInput);
 app.component('CTextarea', CTextarea);
-app.use(pinia);
 app.mount('#app');
