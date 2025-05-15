@@ -1,7 +1,7 @@
 <template>
     <div class="sm:-mt-10 container mx-auto content-center sm:px-5">
         <div class="lg:flex gap-10 justify-items-center">
-            <img class="profile block sm:w-full md:w-3/4 lg:w-3/5" src="@/assets/profile-600.webp" alt="Landz Profile Picture" loading="lazy" />  
+            <img class="profile block sm:w-full md:w-3/4 lg:w-3/5" src="../assets/profile-600.webp" alt="Landz Profile Picture" loading="lazy" />  
             <div class="w-full content-center">
                 <TransitionGroup name="down-to-up" tag="ul">
                     <p v-if="home.hello" key="hello" style="transition-delay: 200ms;" class="text-2xl font-bold mb-2">Hello, I'm</p>
@@ -56,7 +56,7 @@ async function downloadCV() {
     // window.URL.revokeObjectURL(url);
     // a.remove();
 
-    window.open('https://drive.google.com/file/d/1Ntcjna3FRctB2jllu1OO7mjq5ebSmJuq/view?usp=sharing', '_blank')
+    window.open('https://drive.google.com/file/d/1dbICYUtmdhO5qzXwSwG2JYDoXb-gnFsa/view?usp=sharing', '_blank')
 }
 </script>
 

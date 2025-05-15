@@ -5,7 +5,14 @@
             <TransitionGroup name="down-to-up" tag="ul">
                 <TransitionGroup key="nameEmail" name="down-to-up" tag="ul" class="lg:flex gap-8">
                     <CInput v-if="contact.name" style="transition-delay: 200ms;" label="Name *" type="text" v-model="contacts.name"></CInput>
-                    <CInput v-if="contact.email" style="transition-delay: 400ms;" label="Email *" placeholder="example@email.com" type="email" v-model="contacts.email"></CInput>
+                    <CInput 
+                        v-if="contact.email" 
+                        style="transition-delay: 400ms;" 
+                        label="Email *" 
+                        placeholder="example@email.com" 
+                        type="email" 
+                        v-model="contacts.email"
+                    ></CInput>
                 </TransitionGroup>
                 <CTextarea v-if="contact.message" style="transition-delay: 600ms;" label="Message *" v-model="contacts.message"></CTextarea>
                 <div v-if="contact.button" style="transition-delay: 800ms;" class="pt-10 w-full justify-items-center">
